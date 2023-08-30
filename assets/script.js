@@ -33,14 +33,17 @@ function affichageElement(i) {
 function affichageDots(i) {
 	sectionDots = document.querySelector(".dots")
 	sectionDots.innerHTML = ""
+	dotListe = document.createElement("div")
 	for (let numDot=0; numDot<(slides.length); numDot++) {
 		dotUnit = document.createElement("div")
 		dotUnit.classList.add("dot")
 		if (numDot===i) {
 			dotUnit.classList.add("dot_selected")
 		}
-		sectionDots.appendChild(dotUnit)
+		dotListe.appendChild(dotUnit)
+		sectionDots.appendChild(dotListe)
 	}
+	sectionDots.innerHTML = dotListe // Affichage [object HTMLDivElement] ??
 }
 // Appel initial de la fonction
 affichageDots(0)
